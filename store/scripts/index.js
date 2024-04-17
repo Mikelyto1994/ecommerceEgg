@@ -43,7 +43,13 @@ function comprar () {
     // Iterar para obtener el total de la compra
     for (let i = 0; i < totalProducts; i++) {
         const productPrice = Number(prompt(`¿Cuál es el precio del producto #${i+1}?`));
-        total += productPrice;
+
+        //pedir la cantidad de productos
+        const cant = Number(prompt(`Cuantos esta llevando del producto #${i+1}?`));
+
+        let subtotal = cant * productPrice;
+        
+        total += subtotal;
     }
 
     //Mensaje por consola
