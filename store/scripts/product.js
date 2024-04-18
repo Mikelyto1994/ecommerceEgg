@@ -57,4 +57,13 @@ products.push(product6);
 console.log("Array de productos luego de agregar: ");
 console.log(products);
 
+//Quitar el primer elemento del array
+products.shift();
+
+//Quitar el último elemento del array
+products.pop();
+
+//Imprimir por consola el array
+console.log("Array de productos luego de quitar: ");
+console.log(products);
 
