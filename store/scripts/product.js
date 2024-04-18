@@ -41,13 +41,20 @@ const product4 = new Product("004", "Monitor", 300, 10, "https://media.es.wired.
 //Creamos el array de los productos
 let products = [product1, product2, product3, product4];
 
-//Imprimir por consola el array
-console.log("Array de productos: ");
 console.log(products);
 
-//Imprimir el segundo elemento
-console.log(`El segundo elemento de la lista es:`);
-console.log(products[1]);
+//Definiendo variables product5 y product6
+const product5 = new Product("005", "Headphones", 100, 25, "https://www.sony.com/image/7d5f0d8f6e3b6f0b1c5e4a5c7e7e3f4d?fmt=pjpeg&wid=330&hei=330&bgcolor=FFFFFF&bgc=FFFFFF", true, "Sony");
+const product6 = new Product("006", "Webcam", 70, 15, "https://www.logitech.com/content/dam/logitech/en/products/webcams/streamcam/streamcam-gallery-1.png", false, "Logitech");
 
-//Imprimir el nombre del ultimo producto
-console.log(`El ultimo producto es un: ${products[products.length - 1].name}`);
+//Agregar product5 al inicio del array
+products.unshift(product5);
+
+//Agregar product6 al final del array
+products.push(product6);
+
+//Imprimir por consola el array
+console.log("Array de productos luego de agregar: ");
+console.log(products);
+
+
