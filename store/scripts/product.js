@@ -1,3 +1,4 @@
+// clase Producto
 class Product {
     //constructor
     constructor(id, name, price, stock, photo, onsale, supplier) {
@@ -30,35 +31,23 @@ class Product {
 	}
 }
 
-//instanciamos un objeto
-const product1 = new Product();
-//variable prod2 para crear una instancia de Product con las propiedades id, title y price.
-const product2 = new Product("0002", "Tablet", 1200);
-//variable prod3 para crear una instancia de Product con todas las propiedades que requiere la clase.
-const product3 = new Product("0003", "Smartphone", 800, 5, "https://granhogar.com.ec/imagenes/productos/7988:49:d0?v=0", true);
-//prod4 para crear una instancia de Product con todas las propiedades que requiere la clase. 
-const product4 = new Product("0004", "Smartwatch", 300, 10, "https://granhogar.com.ec/imagenes/productos/7988:49:d0?v=0", false, "Samsung");
-//variable prod5 para crear una instancia de Product con todas las propiedades que requiere la clase. Debe tener 12 unidades de stock.
-const product5 = new Product("0005", "Smartwatch", 300, 12, "https://granhogar.com.ec/imagenes/productos/7988:49:d0?v=0", false, "Samsung");
+//instanciamos Los objetos
+const product1 = new Product("001", "Laptop", 1500, 20, "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08484411.png", true, "HP");
+const product2 = new Product("002", "Mouse", 20, 50, "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/accessories/wireless-mouse-gt/specs-img.jpg", false, "Genius");
+const product3 = new Product("003", "Keyboard", 50, 30, "https://media.wired.com/photos/65b0438c22aa647640de5c75/master/pass/Mechanical-Keyboard-Guide-Gear-GettyImages-1313504623.jpg", true, "Logitech");
+const product4 = new Product("004", "Monitor", 300, 10, "https://media.es.wired.com/photos/63b59dd32984c2acd03054a8/16:9/w_1280,c_limit/Samsung-%20Odyssey-Neo-G9-Gaming-Monitor-G95NC.png", false, "Samsung");
 
 
-//modificar valor de atributo privado
-product4.supplier = "Samsung Electronics";
-//Programa la impresión en consola del getter de prod4. 
-console.log(`El proveedor del producto 4 es: ${product4.supplier}`);
+//Creamos el array de los productos
+let products = [product1, product2, product3, product4];
 
-//Ejecuta el método sellUnits para vender 10 unidades
-product5.sellUnits(10);
-//Ejecuta el método sellUnits para vender 5 unidades
-product5.sellUnits(5);
+//Imprimir por consola el array
+console.log("Array de productos: ");
+console.log(products);
 
-//impresion por consola
-console.log("Productos: ");
-console.log(product1);
-console.log(product2);
-console.log(product3);
-console.log(product4);
-console.log(product5);
+//Imprimir el segundo elemento
+console.log(`El segundo elemento de la lista es:`);
+console.log(products[1]);
 
-console.log(`Nombre del producto 2: ${product2.name}`);
-console.log(`Se encuentra en oferta el producto 3: ${product3["onsale"]}`);
+//Imprimir el nombre del ultimo producto
+console.log(`El ultimo producto es un: ${products[products.length - 1].name}`);
