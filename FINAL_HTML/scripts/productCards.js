@@ -21,11 +21,14 @@ function createCard(product) {
 `
 }
 
-let productsTemplate = ""
-
-for (const element of products) {
-  productsTemplate = productsTemplate + createCard(element)
+function printCards(arrayOfProducts, idSelector) {
+  let productsTemplate = "";
+  for (const element of arrayOfProducts) {
+    productsTemplate = productsTemplate + createCard(element);
+  }
+  const productsSelector = document.getElementById(idSelector);
+  productsSelector.innerHTML = productsTemplate;
 }
+  
 
-//imprimir en el DOM
-productsSelector.innerHTML = productsTemplate;
+printCards(products, "products");
