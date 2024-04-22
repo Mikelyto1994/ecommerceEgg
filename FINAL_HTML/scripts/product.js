@@ -31,12 +31,12 @@ class Product {
 }
 
 //instanciamos Los objetos
-const product1 = new Product("001", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
-const product2 = new Product("002", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
-const product3 = new Product("003", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
-const product4 = new Product("004", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
-const product5 = new Product("005", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
-const product6 = new Product("006", "Macbook Pro 15'4", 750000, 20, ["../assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP"); 
+const product1 = new Product("001", "Macbook Pro 15'4", "$750.000", 20, ["./assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
+const product2 = new Product("002", "Havit HV-MS801", "$30", 20, ["./assets/MouseGaming1.jpg", "./assets/MouseGaming2.jpeg", "./assets/MouseGaming3.jpeg"], "50% Off", "Havit", ["black","white"], "Mouse Optical Mouse Gaming", "Incluye impuesto País y percepción AFIP");
+const product3 = new Product("003", "K616 Fizz Rgb Pro", "$99", 20, ["./assets/teclado1.jpeg", "./assets/teclado2.jpeg", "./assets/3teclado2.jpeg"], "50% Off", "Redragon", ["black","white"], "Teclado Gamer", "Incluye impuesto País y percepción AFIP");
+const product4 = new Product("004", "Macbook Pro 15'4", "$750.000", 20, ["./assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
+const product5 = new Product("005", "Macbook Pro 15'4", "$750.000", 20, ["./assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP");
+const product6 = new Product("006", "Macbook Pro 15'4", "$750.000", 20, ["./assets/mock2.jpg"], "50% Off", "Mac", ["black","white"], "Space Gray", "Incluye impuesto País y percepción AFIP"); 
 
 
 //Creamos el array de los productos
