@@ -20,16 +20,7 @@ function printDetails(id){
     const detailsTemplate = `
         <section class="product-images-block">
             <div class="product-images">
-              <img
-                class="mini-img"
-                src="${product.photo[0]}"
-                alt="MacBook Pro 13'4"
-              />
-              <img
-                class="mini-img"
-                src="${product.photo[1]}"
-                alt="MacBook Pro 13'4"
-              />
+            ${product.photo.map((photo) => `<img class="mini-img" src="${photo}" alt="${product.title}" />`).join('')}
             </div>
             <img
               class="big-img"
