@@ -5,7 +5,7 @@ const productsSelector = document.getElementById("products");
 function createCard(product) {
   return `
       <article class="product-card">
-        <a href="./details.html">
+        <a href="./details.html?id=${product.id}">
           <img class="product-img" src="${product.photo[0]}" alt="${product.id}" />
           <div class="product-info">
             <span class="product-title">${product.title}</span>
