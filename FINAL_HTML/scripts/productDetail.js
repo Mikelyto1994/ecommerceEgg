@@ -20,7 +20,7 @@ function printDetails(id){
     const detailsTemplate = `
         <section class="product-images-block">
             <div class="product-images">
-            ${product.photo.map((photo) => `<img class="mini-img" src="${photo}" alt="${product.title}" />`).join('')}
+            ${product.photo.map((photo) => `<img class="mini-img" src="${photo}" alt="${product.title}" onclick="changeMini(event)" />`).join('')}
             </div>
             <img
               class="big-img"
@@ -91,6 +91,15 @@ function printDetails(id){
     `
     const detailsSelector = document.querySelector("#details");
     detailsSelector.innerHTML = detailsTemplate;
+}
+
+/**
+ * Definir función para cambiar imagen
+ */
+function changeMini(event){
+  const selectedSrc = event.target.src;
+  const bigSelector = document.querySelector("#big-img");
+  bigSelector.src = selectedSrc;
 }
 
 printDetails(id);
