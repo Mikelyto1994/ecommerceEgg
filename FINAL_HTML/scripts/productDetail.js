@@ -54,7 +54,7 @@ function printDetails(id){
           <div class="product-checkout-block">
             <div class="checkout-container">
               <span class="checkout-total-label">Total:</span>
-              <h2 id="price" class="checkout-total-price">${product.price}</h2>
+              <h2 id="price" class="checkout-total-price">$${product.price}</h2>
               <p class="checkout-description">
                 ${product.taxPolicy}
               </p>
@@ -80,7 +80,7 @@ function printDetails(id){
               </ul>
               <div class="checkout-process">
                 <div class="top">
-                  <input type="number" min="1" value="1" />
+                  <input type="number" min="1" value="1" onclick="changePrice(event)" />
                   <button type="button" class="cart-btn">
                     Añadir al Carrito
                   </button>
@@ -97,9 +97,26 @@ function printDetails(id){
  * Definir función para cambiar imagen
  */
 function changeMini(event){
+  //Traer el src de la imagen seleccionada
   const selectedSrc = event.target.src;
+  //Traer el selector de la imagen grande
   const bigSelector = document.querySelector("#big-img");
+  //Cambiar el src de la imagen grande
   bigSelector.src = selectedSrc;
+}
+
+/**
+ * Definir funcion para cambiar precio
+ */
+function changePrice(event){
+  //traer la cantidad del input de tipo number
+  const quantity = event.target.value;
+  //traer el producto
+  const product = products.find(product => product.id == id);
+  //traer el selector del precio
+  const priceSelector = document.querySelector("#price");
+  //cambiar el precio total
+  priceSelector.innerHTML = `$${quantity * product.price}`;
 }
 
 printDetails(id);
