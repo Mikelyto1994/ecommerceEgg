@@ -9,11 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/b7301c403c.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   <link rel="stylesheet" href="./styles/layout.css" />
   <link rel="stylesheet" href="./styles/index.css" />
-  <link rel="stylesheet" href="./styles/cart.css" />
-  <title>Tienda Virtual</title>
+  <title>Perfil</title>
 </head>
 
 <body>
@@ -22,7 +20,9 @@
       <a href="./index.html" class="header-logo">
         <img class="header-logo-img" src="./assets/karen-logo.png" width="218" alt="Logo store" />
       </a>
-      
+      <form class="header-form">
+        <input class="header-input" type="text" placeholder="Busca tu perfume ideal" id="search"/>
+      </form>
       <ul class="header-social">
         <li id="facebook" class="header-li">
           <a class="header-a" href="https://facebook.com">
@@ -69,51 +69,76 @@
   </header>
   <section class="hero-section">
     <article class="hero-title">
-      <span class="hero-span">Mi</span>
-      <span class="hero-span">Carrito</span>
+      <span class="hero-span">Belleza</span>
+      <span class="hero-span">Glamour</span>
     </article>
   </section>
   <main>
-    <div class="container">
-      <div class="checkout">
-        <div class="checkout-products" id="checkoutProducts"></div>
-        <div class="checkout-resume">
-          <h2>Resumen del pedido</h2>
-          <h4>Total: <span id="checkoutTotal"></span></h4>
-          <span>Incluye impuestos</span>
-          <form id="pruebaForm" method="POST">
-            <!-- No es necesario el campo de entrada oculto para el asunto del correo -->
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="phone">Celular:</label>
-            <input type="tel" id="phone" name="phone" required><br><br>
-            
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <button style="margin-top: 1rem;" class="btn btn-primary" type="submit">Comprar</button>
-          </form>
-          
-          <h6>Al dar click al botón COMPRAR, tendremos tus datos para comunicarnos y poder coordinar el pago y despacho del pedido ;)</h6>
-          <!-- Nuevo botón para eliminar datos del local storage -->
-          <button style="margin-top: 1rem;" class="btn btn-danger" type="button" id="deleteLocalStorage">Eliminar Datos del Carrito</button>
-        </div>
-      </div>
+    <div class="login">
+      <h1>Inicia sesion <br></h1>
+      <h2>Coloca los datos: </h2>
+        <form id="form-login">
+            <input type="text" id="nombre" placeholder="Nombres">
+            <input type="email" id="email" placeholder="Email">
+            <input type="tel" id="celular" placeholder="Celular">
+            <input type="text" id="direccion" placeholder="Dirección">
+            <button type="submit">Iniciar sesión</button>
+        </form>
     </div>
+    
   </main>
-  <a href="https://wa.me/51940467555" class="whatsapp-button" target="_blank">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIG9Ejv64kvsHYMo92hy8PdbUDGvgWvbLp8ft70jmUw&s" alt="WhatsApp" class="whatsapp-icon">
-  </a>
+  
+  <script>
+    document.getElementById("form-login").addEventListener("submit", function(event) {
+        event.preventDefault();
+    
+        // Verificar si hay un usuario logueado almacenado en localStorage
+        var usuarioLogueado = localStorage.getItem("usuarioLogueado");
+        if (usuarioLogueado) {
+            alert("Sesión iniciada. No es necesario volver a iniciar.");
+            return;
+        }
+    
+        // Obtener los valores de nombre, email, celular y dirección del formulario
+        var nombre = document.getElementById("nombre").value;
+        var email = document.getElementById("email").value;
+        var celular = document.getElementById("celular").value;
+        var direccion = document.getElementById("direccion").value;
+    
+        // Verificar si los campos no están vacíos
+        if (nombre.trim() === "" || email.trim() === "" || celular.trim() === "" || direccion.trim() === "") {
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+    
+        // Almacenar la información de inicio de sesión en localStorage como un objeto JSON
+        var usuarioInfo = {
+            nombre: nombre,
+            email: email,
+            celular: celular,
+            direccion: direccion
+        };
+        localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioInfo));
+    
+        // Redireccionar a la página de perfil
+        window.location.href = "./profile.html";
+    });
+    </script>
+  </main>
   <footer>
 
     <div id="footer" class="footer-container"></div>
 
     <div class="footer-copyright">Curso de HTML + CSS 2023</div>
   </footer>
+  <a href="https://wa.me/51940467555" class="whatsapp-button" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174879.png" alt="WhatsApp" class="whatsapp-icon">
+  </a>
 
   <script src="./scripts/layout.js"></script>
-  <script src="./scripts/cart.js"></script>
+  <script src="./scripts/product.js"></script>
+  <script src="./scripts/productCards.js"></script>
+  <script src="./scripts/filterProducts.js"></script>
 </body>
 
 </html>

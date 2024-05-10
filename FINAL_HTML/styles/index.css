@@ -1,4 +1,5 @@
 /* MAIN PRODUCTS */
+
 .product-container {
   width: 1080px;
   display: flex;
@@ -80,7 +81,59 @@ main {
   color: #428f13;
 }
 
+.whatsapp-button {
+  position: fixed;
+  bottom: 50px; /* Puedes ajustar este valor para cambiar la distancia desde abajo */
+  right: 70px; /* Puedes ajustar este valor para cambiar la distancia desde la derecha */
+  z-index: 999; /* Asegura que esté por encima de otros elementos */
+}
+
+.whatsapp-icon {
+  width: 60px; /* Puedes ajustar este valor para cambiar el tamaño del icono */
+  height: auto;
+  border-radius: 10%; /* Ajusta si quieres un borde redondeado */
+  border: 2px solid #428f13; /* Borde sólido de color verde */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
+  transition: transform 0.2s ease-in-out; /* Efecto de animación */
+}
+
+.whatsapp-icon:hover {
+  transform: scale(2); /* Efecto de zoom al pasar el mouse */
+}
+.fa-heart{
+  color: white;
+  scale: 1.4;
+  position: relative;
+  right:-10px;
+  bottom:3px;
+}
+
+.fa-user{
+  color: white;
+  scale: 1.4;
+  position: relative;
+  right:-30px;
+  bottom:3px;
+}
+.fa-sign-in{
+  color: white;
+  position: relative;
+  right:-10px;
+}
+.login{
+  text-align: center; 
+  margin: 0;
+}
+
+.login h1, .login h2,.login form {
+  margin-bottom: 20px; /* Espaciado en la parte inferior de los elementos */
+}
+
+#cerrar-sesion {
+  margin-left: 50px;
+}
 /* vista de tableta */
+
 
 @media (max-width: 768px) {
   .search .form input {

@@ -1,0 +1,23 @@
+.checkout-products {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan en varias líneas */
+    justify-content: flex-start; /* Alinear elementos al inicio del contenedor */
+}
+
+.checkout-products article {
+    flex: 1 1 500px; /* Establecer el ancho de cada columna en 500px */
+    margin: 0 1rem 1rem 0; /* Margen entre las cartas */
+}
+
+
+.checkout-products article > div > div p {
+    position: relative;
+    top: 30px;
+    margin: 0 0 1rem 0;
+  }
+
+.remove-from-favorites{
+    height: 30px;
+    position: relative;
+    top: 40px;
+}
